@@ -1,4 +1,9 @@
 <p align="center">
+  <a href="README.md"><img src="https://img.shields.io/badge/lang-English-2f81f7?style=for-the-badge"/></a>
+  <a href="README.fa.md"><img src="https://img.shields.io/badge/%D8%B2%D8%A8%D8%A7%D9%86-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C-39ff14?style=for-the-badge"/></a>
+</p>
+
+<p align="center">
   <img src="banner.svg" alt="WRAITH" width="100%"/>
 </p>
 
@@ -16,6 +21,7 @@
   <img src="https://img.shields.io/badge/core-Xray--core-00d4ff?style=flat-square"/>
   <img src="https://img.shields.io/badge/UI-rich%20terminal-c084fc?style=flat-square"/>
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-ff9d00?style=flat-square"/>
+  <img src="https://img.shields.io/badge/license-MIT-ff9d00?style=flat-square"/>
 </p>
 
 <p align="center">
@@ -38,9 +44,11 @@
 - [Project layout](#project-layout)
 - [Under the hood](#under-the-hood)
 - [The honest part (read this)](#the-honest-part-read-this)
+- [Support this project](#support-this-project)
 - [Troubleshooting](#troubleshooting)
 - [Building the Windows .exe yourself](#building-the-windows-exe-yourself)
 - [Contributing](#contributing)
+- [License](#license)
 
 ---
 
@@ -394,6 +402,23 @@ outside.
   local infrastructure in that scenario.
 - Using and publishing circumvention tools carries **legal risk in some countries** —
   that risk is yours to weigh. This is just the tool.
+
+---
+
+## Support this project
+
+WRAITH is free, always will be, and nothing in it is paywalled or crippled.
+If it's useful to you and you'd like to help keep it going, donations are
+welcome — entirely optional, no perks attached, just a way to say thanks:
+
+| | Address |
+|---|---|
+| **USDT (TRC-20)** | `TXW2qJqKcMFKVSYCQLXuZWZFPeoXaieeZQ` |
+| **TRX** | `TXW2qJqKcMFKVSYCQLXuZWZFPeoXaieeZQ` |
+
+Same address for both — they're on the same TRON network. Triple-check it
+against the QR code or address shown in your own wallet before sending
+anything; never trust an address purely because it's printed in a README.
 
 ---
 
