@@ -16,7 +16,6 @@
   <img src="https://img.shields.io/badge/core-Xray--core-00d4ff?style=flat-square"/>
   <img src="https://img.shields.io/badge/UI-rich%20terminal-c084fc?style=flat-square"/>
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-ff9d00?style=flat-square"/>
-  <img src="https://img.shields.io/badge/license-MIT-ff9d00?style=flat-square"/>
 </p>
 
 <p align="center">
@@ -42,7 +41,6 @@
 - [Troubleshooting](#troubleshooting)
 - [Building the Windows .exe yourself](#building-the-windows-exe-yourself)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -445,7 +443,3 @@ project being open. Some directions that would genuinely help:
 If you build something useful on top of it, keep it free.
 
 ---
-
-## License
-
-MIT — see [LICENSE](LICENSE). Use it, fork it, sell nothing.
