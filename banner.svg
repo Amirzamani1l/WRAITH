@@ -1,0 +1,91 @@
+<svg viewBox="0 0 1000 360" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#39d353"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="360" fill="url(#bg)"/>
+
+  <text x="500" y="48" text-anchor="middle" font-family="'Courier New', monospace" font-size="26" font-weight="bold" fill="#e6edf3">
+    &gt; python test.py<tspan fill="#39d353">_</tspan>
+  </text>
+  <text x="500" y="72" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#7d8590">
+    self-healing v2ray connection manager
+  </text>
+
+  <!-- Node 1: GitHub Scraper -->
+  <g filter="url(#glow)">
+    <rect x="40" y="130" width="180" height="90" rx="10" fill="#161b22" stroke="#39d353" stroke-width="1.5"/>
+  </g>
+  <text x="130" y="165" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="bold" fill="#e6edf3">Scraper</text>
+  <text x="130" y="185" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">searches GitHub for</text>
+  <text x="130" y="200" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">public vmess:// links</text>
+
+  <!-- Arrow 1 -->
+  <path d="M 220 175 L 275 175" stroke="url(#accent)" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Node 2: Prober -->
+  <g filter="url(#glow)">
+    <rect x="280" y="130" width="180" height="90" rx="10" fill="#161b22" stroke="#00d4ff" stroke-width="1.5"/>
+  </g>
+  <text x="370" y="165" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="bold" fill="#e6edf3">Prober</text>
+  <text x="370" y="185" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">async ping, every</text>
+  <text x="370" y="200" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">server, every second</text>
+
+  <!-- Arrow 2 -->
+  <path d="M 460 175 L 515 175" stroke="url(#accent)" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Node 3: Xray Manager -->
+  <g filter="url(#glow)">
+    <rect x="520" y="130" width="180" height="90" rx="10" fill="#161b22" stroke="#ff9d00" stroke-width="1.5"/>
+  </g>
+  <text x="610" y="158" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="bold" fill="#e6edf3">Xray Manager</text>
+  <text x="610" y="180" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">auto-connects to the</text>
+  <text x="610" y="195" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">best + safest server</text>
+
+  <!-- Arrow 3 -->
+  <path d="M 700 175 L 755 175" stroke="url(#accent)" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Node 4: Dashboard -->
+  <g filter="url(#glow)">
+    <rect x="760" y="130" width="200" height="90" rx="10" fill="#161b22" stroke="#c084fc" stroke-width="1.5"/>
+  </g>
+  <text x="860" y="165" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="bold" fill="#e6edf3">Live Dashboard</text>
+  <text x="860" y="185" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">rich terminal UI,</text>
+  <text x="860" y="200" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">ping table, live status</text>
+
+  <!-- Feedback loop arrow (bottom, back to Prober) -->
+  <path d="M 860 220 C 860 270, 370 270, 370 220" stroke="#3a4048" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+  <text x="615" y="290" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#484f58">
+    loop every 1s — auto-switch only when current server degrades
+  </text>
+
+  <!-- SOCKS/HTTP ports footer -->
+  <rect x="300" y="310" width="400" height="34" rx="17" fill="#0d1117" stroke="#30363d"/>
+  <text x="500" y="332" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#39d353">
+    SOCKS5 127.0.0.1:10808  |  HTTP 127.0.0.1:10809
+  </text>
+
+  <text x="970" y="352" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="11" fill="#484f58">
+    github.com/Amirzamani1l
+  </text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#00d4ff"/>
+    </marker>
+  </defs>
+</svg>
