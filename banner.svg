@@ -1,91 +1,121 @@
-<svg viewBox="0 0 1000 360" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1200 440" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="100%" stop-color="#161b22"/>
+    <radialGradient id="bg" cx="50%" cy="42%" r="80%">
+      <stop offset="0%" stop-color="#180707"/>
+      <stop offset="55%" stop-color="#0a0404"/>
+      <stop offset="100%" stop-color="#040202"/>
+    </radialGradient>
+    <linearGradient id="blood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff3a3a"/>
+      <stop offset="45%" stop-color="#d11414"/>
+      <stop offset="100%" stop-color="#7a0b0b"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#39d353"/>
-      <stop offset="100%" stop-color="#00d4ff"/>
+    <linearGradient id="drip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b81111"/>
+      <stop offset="60%" stop-color="#9c1010"/>
+      <stop offset="100%" stop-color="#ff2a2a"/>
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <filter id="softglow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="ghostglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="scan" width="3" height="3" patternUnits="userSpaceOnUse">
+      <rect width="3" height="1" fill="#ffffff" opacity="0.02"/>
+    </pattern>
   </defs>
 
-  <rect width="1000" height="360" fill="url(#bg)"/>
+  <!-- desktop backdrop -->
+  <rect width="1200" height="440" fill="url(#bg)"/>
+  <ellipse cx="600" cy="210" rx="440" ry="150" fill="#c21212" opacity="0.16" filter="url(#softglow)">
+    <animate attributeName="opacity" values="0.10;0.22;0.10" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
 
-  <text x="500" y="48" text-anchor="middle" font-family="'Courier New', monospace" font-size="26" font-weight="bold" fill="#e6edf3">
-    &gt; python test.py<tspan fill="#39d353">_</tspan>
-  </text>
-  <text x="500" y="72" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#7d8590">
-    self-healing v2ray connection manager
+  <!-- terminal window -->
+  <rect x="76" y="54" width="1060" height="350" rx="12" fill="#000000" opacity="0.55" filter="url(#softglow)"/>
+  <rect x="70" y="46" width="1060" height="350" rx="12" fill="#0b0505" stroke="#6a0e0e" stroke-width="1.5"/>
+  <rect x="71" y="47" width="1058" height="38" fill="#170a0a"/>
+  <line x1="70" y1="85" x2="1130" y2="85" stroke="#2a0909" stroke-width="1"/>
+
+  <!-- title bar -->
+  <circle cx="90" cy="66" r="4.5" fill="#d11414"/>
+  <text x="106" y="71" font-family="'Consolas','DejaVu Sans Mono',monospace" font-size="14" fill="#9a8c84">Command Prompt</text>
+  <line x1="1050" y1="66" x2="1064" y2="66" stroke="#9a8c84" stroke-width="1.5"/>
+  <rect x="1078" y="60" width="12" height="12" fill="none" stroke="#9a8c84" stroke-width="1.5"/>
+  <path d="M1102,60 L1114,72 M1114,60 L1102,72" stroke="#ff2a2a" stroke-width="1.5"/>
+
+  <!-- body scanlines -->
+  <rect x="71" y="86" width="1058" height="309" fill="url(#scan)"/>
+
+  <!-- prompt line -->
+  <text x="102" y="122" font-family="'Consolas','DejaVu Sans Mono',monospace" font-size="17" fill="#8f8378">C:\WRAITH&gt; <tspan fill="#7bbf4a">python WRAITH.py</tspan><tspan fill="#ff2323" font-weight="bold">█<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.51;1" dur="1.1s" repeatCount="indefinite"/></tspan></text>
+
+  <!-- the app's block logo, in blood -->
+  <text font-family="'Consolas','DejaVu Sans Mono',monospace" font-size="23" font-weight="bold" fill="url(#blood)" filter="url(#glow)" xml:space="preserve">
+    <tspan x="112" y="176">██╗    ██╗██████╗  █████╗ ██╗████████╗██╗  ██╗</tspan>
+    <tspan x="112" y="202">██║    ██║██╔══██╗██╔══██╗██║╚══██╔══╝██║  ██║</tspan>
+    <tspan x="112" y="228">██║ █╗ ██║██████╔╝███████║██║   ██║   ███████║</tspan>
+    <tspan x="112" y="254">██║███╗██║██╔══██╗██╔══██║██║   ██║   ██╔══██║</tspan>
+    <tspan x="112" y="280">╚███╔███╔╝██║  ██║██║  ██║██║   ██║   ██║  ██║</tspan>
+    <tspan x="112" y="306"> ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝   ╚═╝   ╚═╝  ╚═╝</tspan>
   </text>
 
-  <!-- Node 1: GitHub Scraper -->
-  <g filter="url(#glow)">
-    <rect x="40" y="130" width="180" height="90" rx="10" fill="#161b22" stroke="#39d353" stroke-width="1.5"/>
+  <!-- blood dripping off the logo -->
+  <g fill="url(#drip)">
+    <path d="M160,313 C167,323 169,330 160,339 C151,330 153,323 160,313 Z"/>
+    <path d="M250,313 C257,329 259,344 250,353 C241,344 243,329 250,313 Z"/>
+    <path d="M360,313 C367,322 369,326 360,335 C351,326 353,322 360,313 Z"/>
+    <path d="M470,313 C477,327 479,338 470,347 C461,338 463,327 470,313 Z"/>
+    <path d="M560,313 C567,331 569,348 560,357 C551,348 553,331 560,313 Z"/>
+    <path d="M680,313 C687,324 689,332 680,341 C671,332 673,324 680,313 Z"/>
   </g>
-  <text x="130" y="165" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="bold" fill="#e6edf3">Scraper</text>
-  <text x="130" y="185" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">searches GitHub for</text>
-  <text x="130" y="200" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">public vmess:// links</text>
 
-  <!-- Arrow 1 -->
-  <path d="M 220 175 L 275 175" stroke="url(#accent)" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <!-- subtitle -->
+  <text x="112" y="360" font-family="'Consolas','DejaVu Sans Mono',monospace" font-size="17" letter-spacing="2" fill="#b9a99f">self-healing v2ray connection manager</text>
 
-  <!-- Node 2: Prober -->
-  <g filter="url(#glow)">
-    <rect x="280" y="130" width="180" height="90" rx="10" fill="#161b22" stroke="#00d4ff" stroke-width="1.5"/>
+  <!-- the ghost, floating & haunting -->
+  <g filter="url(#ghostglow)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="3.4s" repeatCount="indefinite"/>
+    <path d="M913,243 L913,207 C913,159 997,159 997,207 L997,243 Q986,261 976,247 Q965,261 955,247 Q945,261 934,247 Q924,261 913,243 Z" fill="#dcd4ca" opacity="0.92"/>
+    <ellipse cx="940" cy="204" rx="6.5" ry="9" fill="#0a0505"/>
+    <ellipse cx="970" cy="204" rx="6.5" ry="9" fill="#0a0505"/>
+    <circle cx="941" cy="206" r="2" fill="#ff2a2a"/>
+    <circle cx="971" cy="206" r="2" fill="#ff2a2a"/>
+    <ellipse cx="955" cy="226" rx="5" ry="6.5" fill="#0a0505" opacity="0.85"/>
   </g>
-  <text x="370" y="165" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="bold" fill="#e6edf3">Prober</text>
-  <text x="370" y="185" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">async ping, every</text>
-  <text x="370" y="200" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">server, every second</text>
 
-  <!-- Arrow 2 -->
-  <path d="M 460 175 L 515 175" stroke="url(#accent)" stroke-width="2.5" marker-end="url(#arrow)"/>
-
-  <!-- Node 3: Xray Manager -->
-  <g filter="url(#glow)">
-    <rect x="520" y="130" width="180" height="90" rx="10" fill="#161b22" stroke="#ff9d00" stroke-width="1.5"/>
+  <!-- blood leaking off the terminal frame -->
+  <g fill="url(#drip)">
+    <path d="M250,396 C257,405 259,409 250,418 C241,409 243,405 250,396 Z"/>
+    <path d="M480,396 C487,409 489,419 480,428 C471,419 473,409 480,396 Z"/>
+    <path d="M760,396 C767,404 769,407 760,416 C751,407 753,404 760,396 Z"/>
+    <path d="M1000,396 C1007,407 1009,415 1000,424 C991,415 993,407 1000,396 Z"/>
   </g>
-  <text x="610" y="158" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="bold" fill="#e6edf3">Xray Manager</text>
-  <text x="610" y="180" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">auto-connects to the</text>
-  <text x="610" y="195" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">best + safest server</text>
 
-  <!-- Arrow 3 -->
-  <path d="M 700 175 L 755 175" stroke="url(#accent)" stroke-width="2.5" marker-end="url(#arrow)"/>
-
-  <!-- Node 4: Dashboard -->
-  <g filter="url(#glow)">
-    <rect x="760" y="130" width="200" height="90" rx="10" fill="#161b22" stroke="#c084fc" stroke-width="1.5"/>
+  <!-- falling drops -->
+  <g fill="url(#drip)">
+    <path d="M0,-7 C4,-3 5,2 0,6 C-5,2 -4,-3 0,-7 Z" opacity="0" transform="translate(250,357)">
+      <animateTransform attributeName="transform" type="translate" values="250,357;250,432" dur="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.18;0.6;0.95" dur="2.4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0,-7 C4,-3 5,2 0,6 C-5,2 -4,-3 0,-7 Z" opacity="0" transform="translate(560,361)">
+      <animateTransform attributeName="transform" type="translate" values="560,361;560,432" dur="2.7s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.18;0.6;0.95" dur="2.7s" begin="1.2s" repeatCount="indefinite"/>
+    </path>
   </g>
-  <text x="860" y="165" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="bold" fill="#e6edf3">Live Dashboard</text>
-  <text x="860" y="185" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">rich terminal UI,</text>
-  <text x="860" y="200" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#7d8590">ping table, live status</text>
 
-  <!-- Feedback loop arrow (bottom, back to Prober) -->
-  <path d="M 860 220 C 860 270, 370 270, 370 220" stroke="#3a4048" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
-  <text x="615" y="290" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#484f58">
-    loop every 1s — auto-switch only when current server degrades
-  </text>
-
-  <!-- SOCKS/HTTP ports footer -->
-  <rect x="300" y="310" width="400" height="34" rx="17" fill="#0d1117" stroke="#30363d"/>
-  <text x="500" y="332" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#39d353">
-    SOCKS5 127.0.0.1:10808  |  HTTP 127.0.0.1:10809
-  </text>
-
-  <text x="970" y="352" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="11" fill="#484f58">
-    github.com/Amirzamani1l
-  </text>
-
-  <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-      <path d="M0,0 L8,3 L0,6 Z" fill="#00d4ff"/>
-    </marker>
-  </defs>
+  <!-- embers -->
+  <g>
+    <circle cx="150" cy="120" r="2" fill="#ff5a1f"><animate attributeName="opacity" values="0.2;0.9;0.3;0.7;0.2" dur="2.7s" repeatCount="indefinite"/></circle>
+    <circle cx="1150" cy="150" r="2.3" fill="#ff2a2a"><animate attributeName="opacity" values="0.3;0.8;0.2;0.6;0.3" dur="3.3s" repeatCount="indefinite"/></circle>
+    <circle cx="1160" cy="320" r="1.8" fill="#ff5a1f"><animate attributeName="opacity" values="0.2;0.7;0.3;0.9;0.2" dur="2.4s" repeatCount="indefinite"/></circle>
+    <circle cx="40" cy="300" r="2" fill="#ff2a2a"><animate attributeName="opacity" values="0.3;0.9;0.4;0.7;0.3" dur="3.8s" repeatCount="indefinite"/></circle>
+    <circle cx="45" cy="150" r="1.6" fill="#ff5a1f"><animate attributeName="opacity" values="0.2;0.8;0.3;0.6;0.2" dur="3.0s" repeatCount="indefinite"/></circle>
+  </g>
 </svg>
