@@ -21,7 +21,6 @@
   <img src="https://img.shields.io/badge/core-Xray--core-00d4ff?style=flat-square"/>
   <img src="https://img.shields.io/badge/UI-rich%20terminal-c084fc?style=flat-square"/>
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-ff9d00?style=flat-square"/>
-  <img src="https://img.shields.io/badge/license-MIT-ff9d00?style=flat-square"/>
 </p>
 
 <p align="center">
@@ -48,7 +47,6 @@
 - [Troubleshooting](#troubleshooting)
 - [Building the Windows .exe yourself](#building-the-windows-exe-yourself)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
