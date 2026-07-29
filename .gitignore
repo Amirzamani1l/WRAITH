@@ -1,0 +1,9 @@
+.env
+bin/
+config_active.json
+__pycache__/
+*.pyc
+dist/
+build/
+*.spec
+xray_stderr.log
