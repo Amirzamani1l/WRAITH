@@ -466,3 +466,9 @@ project being open. Some directions that would genuinely help:
 If you build something useful on top of it, keep it free.
 
 ---
+
+---
+
+<p align="center">
+  <sub>This README was written by Claude, an AI made by Anthropic.</sub>
+</p>
