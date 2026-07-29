@@ -364,3 +364,8 @@ Fork و issue و pull request همه خوش‌اومدن — کلِ هدفِ ا�
 اگه یه چیزِ به‌دردبخور روش ساختی، رایگان نگهش دار.
 
 </div>
+---
+
+<p align="center" dir="rtl">
+  <sub>این فایل README توسط هوش مصنوعی Claude (ساخته‌ی Anthropic) نوشته شده است.</sub>
+</p>
